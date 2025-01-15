@@ -1,1 +1,129 @@
+Nmap 
 
+nmap juice-shop.herokuapp.com 
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-15 02:52 EST
+Nmap scan report for juice-shop.herokuapp.com (46.137.15.86)
+Host is up (0.025s latency).
+Other addresses for juice-shop.herokuapp.com (not scanned): 54.220.192.176 54.73.53.134
+rDNS record for 46.137.15.86: ec2-46-137-15-86.eu-west-1.compute.amazonaws.com
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap done: 1 IP address (1 host up) scanned in 16.04 seconds
+
+Http and Https are open
+______________________________________________________________________________________________________________________________________________
+nmap -sC -sV -O -p 80,443 juice-shop.herokuapp.com
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-15 02:55 EST
+Nmap scan report for juice-shop.herokuapp.com (54.220.192.176)
+Host is up (0.11s latency).
+Other addresses for juice-shop.herokuapp.com (not scanned): 46.137.15.86 54.73.53.134
+rDNS record for 54.220.192.176: ec2-54-220-192-176.eu-west-1.compute.amazonaws.com
+
+PORT    STATE SERVICE   VERSION
+80/tcp  open  http      heroku-router
+|_http-title: OWASP Juice Shop
+| http-server-header: 
+|   Cowboy
+|_  heroku-router
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.0 400 Bad Request
+|     Cache-Control: no-cache, no-store
+|     Content-Type: text/html; charset=utf-8
+|     Date: 2025-01-15 07:56:25.763156996 +0000 UTC
+|     Server: heroku-router
+|     Content-Length: 0
+|   GetRequest: 
+|     HTTP/1.0 400 Bad Request
+|     Cache-Control: no-cache, no-store
+|     Content-Type: text/html; charset=utf-8
+|     Date: 2025-01-15 07:56:04.722987647 +0000 UTC
+|     Server: heroku-router
+|     Content-Length: 0
+|   HTTPOptions: 
+|     HTTP/1.0 400 Bad Request
+|     Cache-Control: no-cache, no-store
+|     Content-Type: text/html; charset=utf-8
+|     Date: 2025-01-15 07:56:09.993895591 +0000 UTC
+|     Server: heroku-router
+|_    Content-Length: 0
+| http-robots.txt: 1 disallowed entry 
+|_/ftp
+|_http-cors: HEAD GET POST PUT DELETE PATCH
+443/tcp open  ssl/https heroku-router
+|_http-cors: HEAD GET POST PUT DELETE PATCH
+|_http-title: OWASP Juice Shop
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=*.herokuapp.com
+| Subject Alternative Name: DNS:*.herokuapp.com
+| Not valid before: 2024-03-02T00:00:00
+|_Not valid after:  2025-03-31T23:59:59
+| http-server-header: 
+|   Cowboy
+|_  heroku-router
+| http-robots.txt: 1 disallowed entry 
+|_/ftp
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.0 400 Bad Request
+|     Cache-Control: no-cache, no-store
+|     Content-Type: text/html; charset=utf-8
+|     Date: 2025-01-15 07:56:17.834892113 +0000 UTC
+|     Server: heroku-router
+|     Content-Length: 0
+|   GetRequest: 
+|     HTTP/1.0 400 Bad Request
+|     Cache-Control: no-cache, no-store
+|     Content-Type: text/html; charset=utf-8
+|     Date: 2025-01-15 07:56:12.401837195 +0000 UTC
+|     Server: heroku-router
+|     Content-Length: 0
+|   HTTPOptions: 
+|     HTTP/1.0 400 Bad Request
+|     Cache-Control: no-cache, no-store
+|     Content-Type: text/html; charset=utf-8
+|     Date: 2025-01-15 07:56:15.120912326 +0000 UTC
+|     Server: heroku-router
+|_    Content-Length: 0
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.94SVN%I=7%D=1/15%Time=67876A02%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,C0,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nCache-Control:\x20n
+SF:o-cache,\x20no-store\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\
+SF:nDate:\x202025-01-15\x2007:56:04\.722987647\x20\+0000\x20UTC\r\nServer:
+SF:\x20heroku-router\r\nContent-Length:\x200\r\n\r\n")%r(HTTPOptions,C0,"H
+SF:TTP/1\.0\x20400\x20Bad\x20Request\r\nCache-Control:\x20no-cache,\x20no-
+SF:store\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nDate:\x202025-
+SF:01-15\x2007:56:09\.993895591\x20\+0000\x20UTC\r\nServer:\x20heroku-rout
+SF:er\r\nContent-Length:\x200\r\n\r\n")%r(FourOhFourRequest,C0,"HTTP/1\.0\
+SF:x20400\x20Bad\x20Request\r\nCache-Control:\x20no-cache,\x20no-store\r\n
+SF:Content-Type:\x20text/html;\x20charset=utf-8\r\nDate:\x202025-01-15\x20
+SF:07:56:25\.763156996\x20\+0000\x20UTC\r\nServer:\x20heroku-router\r\nCon
+SF:tent-Length:\x200\r\n\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port443-TCP:V=7.94SVN%T=SSL%I=7%D=1/15%Time=67876A07%P=x86_64-pc-linux-
+SF:gnu%r(GetRequest,C0,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nCache-Contro
+SF:l:\x20no-cache,\x20no-store\r\nContent-Type:\x20text/html;\x20charset=u
+SF:tf-8\r\nDate:\x202025-01-15\x2007:56:12\.401837195\x20\+0000\x20UTC\r\n
+SF:Server:\x20heroku-router\r\nContent-Length:\x200\r\n\r\n")%r(HTTPOption
+SF:s,C0,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nCache-Control:\x20no-cache,
+SF:\x20no-store\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nDate:\x
+SF:202025-01-15\x2007:56:15\.120912326\x20\+0000\x20UTC\r\nServer:\x20hero
+SF:ku-router\r\nContent-Length:\x200\r\n\r\n")%r(FourOhFourRequest,C0,"HTT
+SF:P/1\.0\x20400\x20Bad\x20Request\r\nCache-Control:\x20no-cache,\x20no-st
+SF:ore\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nDate:\x202025-01
+SF:-15\x2007:56:17\.834892113\x20\+0000\x20UTC\r\nServer:\x20heroku-router
+SF:\r\nContent-Length:\x200\r\n\r\n");
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: bridge|general purpose
+Running (JUST GUESSING): Oracle Virtualbox (98%), QEMU (94%)
+OS CPE: cpe:/o:oracle:virtualbox cpe:/a:qemu:qemu
+Aggressive OS guesses: Oracle Virtualbox (98%), QEMU user mode network gateway (94%)
+No exact OS matches for host (test conditions non-ideal).
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 260.03 seconds
+                                                                
